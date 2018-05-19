@@ -1,0 +1,4 @@
+services:
+#    pa_ondebackend.example:
+#        class: paOnde\backendBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

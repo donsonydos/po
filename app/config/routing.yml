@@ -1,0 +1,12 @@
+pa_ondebackend:
+    resource: "@paOndebackendBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+zahira:
+    resource: "@zahiraBundle/Resources/config/routing.yml"
+    prefix:   /zahira
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

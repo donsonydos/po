@@ -1,0 +1,60 @@
+zahira_homepage:
+    path:     /
+    defaults: { _controller: zahiraBundle:Default:index }
+    
+zahira_youth:
+    path:     /juventud
+    defaults: { _controller: zahiraBundle:Youth:index }
+    methods: [GET]
+    
+zahira_countyount:
+    path:     /juventud/countyouth
+    defaults: { _controller: zahiraBundle:Youth:count }
+    methods: [GET]
+    
+zahira_getyount:
+    path:     /juventud/getyouth
+    defaults: { _controller: zahiraBundle:Youth:get }
+    methods: [GET]
+    
+zahira_add:
+    path:    /juventud/add
+    defaults: { _controller: zahiraBundle:Youth:add }
+    methods: [POST]
+    
+zahira_view:
+    path:    /juventud/view/{id}
+    defaults: { _controller: zahiraBundle:Youth:view }
+    methods: [GET]
+    
+zahira_searchip:
+    path:    /juventud/searchip/{ip}
+    defaults: { _controller: zahiraBundle:Youth:SearchIp }
+    methods: [GET]
+    
+zahira_EditState:
+    path:     /juventud/editstate/{id}
+    defaults: { _controller: zahiraBundle:Youth:EditState }
+    methods: [PUT]
+    
+zahira_Edit:
+    path:     /juventud/edit/{id}
+    defaults: { _controller: zahiraBundle:Youth:Edit }
+    methods: [PUT]
+    
+zahira_mail:
+    path:    /juventud/mail
+    defaults: { _controller: zahiraBundle:Youth:mail }
+    methods: [POST]
+    
+# listar eps 
+
+zahira_eps:
+    path:    /juventud/eps
+    defaults: { _controller: zahiraBundle:Youth:eps }
+    methods: [GET]
+    
+zahira_rh:
+    path:    /juventud/rh
+    defaults: { _controller: zahiraBundle:Youth:rh }
+    methods: [GET]
