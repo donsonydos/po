@@ -1,0 +1,84 @@
+{% extends 'main.html.twig' %}
+{#{% extends 'base.html.twig' %}#}
+
+{% block contenido %}
+    <!-- Page Breadcrumb -->
+    <div class="page-breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="#">Lugares</a>
+            </li>
+            <li class="active">Lista Lugares</li>
+        </ul>
+    </div>
+    <!-- /Page Breadcrumb -->
+    <div class="page-header position-relative">
+        <div class="header-title">
+            <h1>
+                Lista de Lugares
+            </h1>
+        </div>
+        <!--Header Buttons-->
+        <div class="header-buttons">
+            <a class="sidebar-toggler" href="#">
+                <i class="fa fa-arrows-h"></i>
+            </a>
+            <a class="refresh" id="refresh-toggler" href="#">
+                <i class="fa fa-refresh"></i>
+            </a>
+            <a class="fullscreen" id="fullscreen-toggler" href="#">
+                <i class="fa fa-arrows-alt"></i>
+            </a>
+        </div>
+        <!--Header Buttons End-->
+    </div>
+    <div class="page-body">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="widget">
+                    <div class="widget-header ">
+                        <ul>
+                            <li>
+                                <a href="{{ path('place_new') }}">Crear Nuevo Lugar</a>
+                            </li>
+                        </ul>
+                        <div class="widget-body">
+                            <div class="flip-scroll">
+                                <table class="table table-bordered table-striped table-condensed flip-content">
+                                    <thead class="flip-content bordered-palegreen">
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Nombre</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for place in places %}
+                                        <tr>
+                                            <td>
+                                                <a href="{{ path('place_show', { 'id': place.id }) }}">{{ place.id }}</a>
+                                            </td>
+                                            <td>{{ place.plceName }}</td>
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a href="{{ path('place_show', { 'id': place.id }) }}">show</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ path('place_edit', { 'id': place.id }) }}">edit</a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

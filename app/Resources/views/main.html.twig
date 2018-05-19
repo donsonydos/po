@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>PaOnde</title>
+
+    <meta name="description" content="PaOnde" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="{{ asset('bundles/paondebackend/img/favicon.png')}}" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ asset('/bundles/paondebackend/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/paondebackend/css/bootstrap-datetimepicker.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/paondebackend/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/paondebackend/css/weather-icons.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/paondebackend/css/beyond.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/paondebackend/css/demo.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/paondebackend/css/typicons.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/paondebackend/css/animate.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/paondebackend/css/style.css') }}" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css' />
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="{{ asset('/bundles/paondebackend/js/skins.min.js') }}"></script>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+<!-- Loading Container -->
+<div class="loading-container">
+    <div class="loader"></div>
+</div>
+<!--  /Loading Container -->
+<!-- Navbar -->
+{% include 'Default/navBar.html.twig' %}
+<!-- /Navbar -->
+<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+
+        <!-- Page Sidebar -->
+        {% include 'Default/sideBar.html.twig' %}
+        <!-- /Page Sidebar -->
+
+        <!-- Page Content -->
+        <div class="page-content">
+            {% block contenido %}
+
+            {% endblock contenido %}
+        </div>
+        <!-- /Page Content -->
+
+    </div>
+    <!-- /Page Container -->
+    <!-- Main Container -->
+    <script src="{{ asset('/bundles/paondebackend/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('/bundles/paondebackend/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/bundles/paondebackend/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ asset('/bundles/paondebackend/js/locales/bootstrap-datetimepicker.es.js') }}"></script>
+    <script src="{{ asset('/bundles/paondebackend/js/beyond.js') }}"></script>
+    <script src="{{ asset('/bundles/paondebackend/js/bootbox.min.js') }}"></script>
+    {#<script src="{{ asset('/bundles/paondebackend/js/slimscroll/jquery.slimscroll.min.js') }}"></script>#}
+    {#<script type="text/javascript">#}
+        {% block scripts %}
+        {% endblock %}
+</div>
+</body>
+<!--  /Body -->
+</html>
