@@ -1,20 +1,21 @@
 {% extends 'base.html.twig' %}
+
 {% block body %}
     <!-- Page Breadcrumb -->
     <div class="page-breadcrumbs">
         <ul class="breadcrumb">
             <li>
-                <i class="fa fa-home"></i>
-                <a href="#">PaOnde</a>
+                <i class="fa fa-list"></i>
+                <a href="#">Categorías</a>
             </li>
-            <li class="active">Home</li>
+            <li class="active">Lista de Categorías</li>
         </ul>
     </div>
     <!-- /Page Breadcrumb -->
     <div class="page-header position-relative">
         <div class="header-title">
             <h1>
-                Home
+                Lista de Categorías
             </h1>
         </div>
         <!--Header Buttons-->
@@ -38,7 +39,7 @@
                     <div class="widget-header ">
                         <ul>
                             <li>
-                                <a href="{{ path('place_new') }}">Crear Nuevo Lugar</a>
+                                <a href="{{ path('place_type_new') }}">Crear Nueva Categoría</a>
                             </li>
                         </ul>
                         <div class="widget-body">
@@ -46,28 +47,25 @@
                                 <table class="table table-bordered table-striped table-condensed flip-content">
                                     <thead class="flip-content bordered-palegreen">
                                     <tr>
-                                        <th>id</th>
                                         <th>Nombre</th>
+                                        <th>Ordenamiento</th>
                                         <th>Acciones</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    {% for place_type in place_types %}
                                         <tr>
-                                            <td>
-                                                <a href="javascript:void(0)">ejemplo</a>
-                                            </td>
-                                            <td>hola</td>
+                                            <td>{{ place_type.pltyName }}</td>
+                                            <td>{{ place_type.pltyOrdering }}</td>
                                             <td>
                                                 <ul>
                                                     <li>
-                                                        <a href="javascript:void(0)">show</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0)">edit</a>
+                                                        <a href="{{ path('place_type_edit', { 'id': place_type.id }) }}">Editar</a>
                                                     </li>
                                                 </ul>
                                             </td>
                                         </tr>
+                                    {% endfor %}
                                     </tbody>
                                 </table>
                             </div>

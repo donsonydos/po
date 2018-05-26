@@ -7,14 +7,14 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PlaceType extends AbstractType
+class Tags_cloudType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('plceName', TextType::class, array(
+        $builder->add('taclName', TextType::class, array(
             'label' => 'Nombre',
             'attr' =>  array(
                 'class' => 'form-control'
@@ -26,7 +26,7 @@ class PlaceType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'paOnde\backendBundle\Entity\Place'
+            'data_class' => 'paOnde\backendBundle\Entity\Tags_cloud'
         ));
     }
 
@@ -35,7 +35,7 @@ class PlaceType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'paonde_backendbundle_place';
+        return 'paonde_backendbundle_tags_cloud';
     }
 
 

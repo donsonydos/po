@@ -3,144 +3,92 @@
     <ul class="nav sidebar-menu">
         <!--Dashboard-->
         <li class="active">
-            {#<a href="{{ path('backend_index') }}">#}
-            <a href="#">
+            <a href="{{ path('home') }}">
                 <i class="menu-icon fa fa-home"></i>
-                <span class="menu-text"> Arista </span>
+                <span class="menu-text"> PaOnde </span>
             </a>
         </li>
         <!--Databoxes-->
-
-        {% if loadfile is defined  %}
-        <li class="active open">
-    {% else %}
-        <li>
-            {% endif %}
-
-            <a href="javascript:void(0)" class="menu-dropdown">
-                <i class="menu-icon fa fa-file"></i>
-                <span class="menu-text"> Cargar Excel </span>
-                <i class="menu-expand"></i>
-            </a>
-            <ul class="submenu">
-                {% if loadfile is defined %}
-                <li class="active">
-            {% else %}
-                <li>
-                    {% endif %}
-                    <a href="#">
-                    {#<a href="{{ path('products_excel') }}">#}
-                        <span class="menu-text"> Cargar Productos Excel </span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-
-        {% if categories is defined and subCategory is not defined and products is not defined %}
-        <li class="active open">
-    {% else %}
-        <li>
-            {% endif %}
-
+        <!--Lugares-->
+        <li {% if menuPlace is defined%}class="active open"{% endif %}>
             <a href="#" class="menu-dropdown">
-                <i class="menu-icon fa fa-book"></i>
-                <span class="menu-text"> Categorias </span>
+                <i class="menu-icon fa fa-building"></i>
+                <span class="menu-text"> Lugares </span>
                 <i class="menu-expand"></i>
             </a>
             <ul class="submenu">
-                {% if categoryList is defined %}
-                <li class="active">
-            {% else %}
-                <li>
-                    {% endif %}
-                    {#<a href="{{ path('category_index') }}">#}
-                    <a href="#">
-                        <span class="menu-text"> Lista de Categorias </span>
+                <li {% if placeList is defined %}class="active"{% endif %}>
+                    <a href="{{ path('place_index') }}">
+                        <span class="menu-text"> Lista de Lugares </span>
                     </a>
                 </li>
-                {% if category is defined %}
-                <li class="active">
-                    {% else %}
-                <li>
-                    {% endif %}
-                    {#<a href="{{ path('category_new') }}">#}
-                    <a href="#">
-                        <span class="menu-text"> Crear Categoria</span>
+                <li {% if placeNew is defined %}class="active"{% endif %}>
+                    <a href="{{ path('place_new') }}">
+                        <span class="menu-text"> Crear Lugar</span>
                     </a>
                 </li>
             </ul>
         </li>
-
-        {% if subCategories is defined and products is not defined %}
-        <li class="active open">
-            {% else %}
-        <li>
-            {% endif %}
-
+        <!--sucursales-->
+        <li {% if menuBranchOffice is defined%}class="active open"{% endif %}>
             <a href="#" class="menu-dropdown">
-                <i class="menu-icon fa fa-subscript"></i>
-                <span class="menu-text"> Sub Categorias </span>
+                <i class="menu-icon fa fa-map-marker"></i>
+                <span class="menu-text"> Sucursales </span>
                 <i class="menu-expand"></i>
             </a>
             <ul class="submenu">
-                {% if subCategoryList is defined %}
-                <li class="active">
-            {% else %}
-                <li>
-                    {% endif %}
-                    {#<a href="{{ path('subcategory_index') }}">#}
-                    <a href="#">
-                        <span class="menu-text"> Lista de Sub Categorias </span>
+                <li {% if branchOfficeList is defined %}class="active"{% endif %}>
+                    <a href="{{ path('office_index') }}">
+                        <span class="menu-text"> Lista de Sucursales </span>
                     </a>
                 </li>
-                {% if subCategory is defined %}
-                <li class="active">
-                    {% else %}
-                <li>
-                    {% endif %}
-                    {#<a href="{{ path('subcategory_new') }}">#}
-                    <a href="#">
-                        <span class="menu-text"> Crear Sub Categoria</span>
+                <li {% if branchOfficeNew is defined %}class="active"{% endif %}>
+                    <a href="{{ path('office_new') }}">
+                        <span class="menu-text"> Crear Sucursal</span>
                     </a>
                 </li>
             </ul>
         </li>
-
-        {% if products is defined %}
-        <li class="active open">
-            {% else %}
-        <li>
-            {% endif %}
-
+        <!--categorias-->
+        <li {% if menuCategories is defined%}class="active open"{% endif %}>
             <a href="#" class="menu-dropdown">
-                <i class="menu-icon fa fa-bookmark"></i>
-                <span class="menu-text"> Productos </span>
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text"> Categorías </span>
                 <i class="menu-expand"></i>
             </a>
             <ul class="submenu">
-                {% if productsList is defined %}
-                <li class="active">
-            {% else %}
-                <li>
-                    {% endif %}
-                    {#<a href="{{ path('product_index') }}">#}
-                    <a href="#">
-                        <span class="menu-text"> Lista de Productos </span>
+                <li {% if categoryList is defined %}class="active"{% endif %}>
+                    <a href="{{ path('place_type_index') }}">
+                        <span class="menu-text"> Lista de Categorías </span>
                     </a>
                 </li>
-                {% if product is defined %}
-                <li class="active">
-                    {% else %}
-                <li>
-                    {% endif %}
-                    {#<a href="{{ path('product_new') }}">#}
-                    <a href="#">
-                        <span class="menu-text"> Crear Producto</span>
+                <li {% if categoryNew is defined %}class="active"{% endif %}>
+                    <a href="{{ path('place_type_new') }}">
+                        <span class="menu-text"> Crear Categoría</span>
                     </a>
                 </li>
             </ul>
         </li>
-
+        <!--características-->
+        <li {% if menuTags is defined%}class="active open"{% endif %}>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-tags"></i>
+                <span class="menu-text"> Características </span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li {% if tagsList is defined %}class="active"{% endif %}>
+                    <a href="{{ path('tags_cloud_index') }}">
+                        <span class="menu-text"> Lista de Características </span>
+                    </a>
+                </li>
+                <li {% if tagsNew is defined %}class="active"{% endif %}>
+                    <a href="{{ path('tags_cloud_new') }}">
+                        <span class="menu-text"> Crear Características</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
     <!-- /Sidebar Menu -->
 </div>

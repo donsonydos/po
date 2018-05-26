@@ -27,6 +27,8 @@ class PlaceController extends Controller
         $places = $em->getRepository('paOndebackendBundle:Place')->findAll();
 
         return $this->render('place/index.html.twig', array(
+            'menuPlace' => 1,
+            'placeList' => 1,
             'places' => $places,
         ));
     }
@@ -52,6 +54,11 @@ class PlaceController extends Controller
         }
 
         return $this->render('place/new.html.twig', array(
+            'menuPlace' => 1,
+            'placeNew' => 1,
+            'nameItem' => 'Lugares',
+            'listItem' => 'lista de Lugares',
+            'newItem' => 'Nuevo Lugar',
             'place' => $place,
             'form' => $form->createView(),
         ));
@@ -93,6 +100,9 @@ class PlaceController extends Controller
 
         return $this->render('place/edit.html.twig', array(
             'place' => $place,
+            'nameItem' => 'Lugares',
+            'listItem' => 'Lista de Lugares',
+            'editItem' => 'Editar Lugar',
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));

@@ -1,0 +1,43 @@
+<!-- /Page Breadcrumb -->
+<div class="page-header position-relative">
+    <div class="header-title">
+        <h1>
+            {{ editItem }}
+        </h1>
+    </div>
+    <!--Header Buttons-->
+    <div class="header-buttons">
+        <a class="sidebar-toggler" href="#">
+            <i class="fa fa-arrows-h"></i>
+        </a>
+        <a class="refresh" id="refresh-toggler" href="#">
+            <i class="fa fa-refresh"></i>
+        </a>
+        <a class="fullscreen" id="fullscreen-toggler" href="#">
+            <i class="fa fa-arrows-alt"></i>
+        </a>
+    </div>
+    <!--Header Buttons End-->
+</div>
+{% if errors is defined %}
+    <div class="alert alert-danger">
+        <ul>
+            {% for error in errors %}
+                <li>{{ error.message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+
+<!-- Page Body -->
+<div class="page-body">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget flat radius-bordered">
+                <div class="widget-header bg-blue">
+                    <span class="widget-caption">{{ editItem }}</span>
+                </div>
+
+                <div class="widget-body">
+                    <div id="registration-form">

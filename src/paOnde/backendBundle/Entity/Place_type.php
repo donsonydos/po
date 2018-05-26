@@ -28,6 +28,12 @@ class Place_type
      */
     private $pltyName;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="plty_ordering", type="integer", unique=false)
+     */
+    private $pltyOrdering;
 
     /**
      * Get id
@@ -61,6 +67,30 @@ class Place_type
     public function getPltyName()
     {
         return $this->pltyName;
+    }
+
+    /**
+     * Set pltyOrdering
+     *
+     * @param string $pltyOrdering
+     *
+     * @return Place_type
+     */
+    public function setPltyOrdering($pltyOrdering)
+    {
+        $this->pltyOrdering = $pltyOrdering;
+
+        return $this;
+    }
+
+    /**
+     * Get pltyOrdering
+     *
+     * @return string
+     */
+    public function getPltyOrdering()
+    {
+        return $this->pltyOrdering;
     }
 }
 

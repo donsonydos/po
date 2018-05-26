@@ -1,12 +1,11 @@
-{% extends 'main.html.twig' %}
-{#{% extends 'base.html.twig' %}#}
+{% extends 'base.html.twig' %}
 
-{% block contenido %}
+{% block body %}
     <!-- Page Breadcrumb -->
     <div class="page-breadcrumbs">
         <ul class="breadcrumb">
             <li>
-                <i class="fa fa-home"></i>
+                <i class="fa fa-building"></i>
                 <a href="#">Lugares</a>
             </li>
             <li class="active">Lista Lugares</li>
@@ -48,7 +47,6 @@
                                 <table class="table table-bordered table-striped table-condensed flip-content">
                                     <thead class="flip-content bordered-palegreen">
                                     <tr>
-                                        <th>id</th>
                                         <th>Nombre</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -56,17 +54,11 @@
                                     <tbody>
                                     {% for place in places %}
                                         <tr>
-                                            <td>
-                                                <a href="{{ path('place_show', { 'id': place.id }) }}">{{ place.id }}</a>
-                                            </td>
                                             <td>{{ place.plceName }}</td>
                                             <td>
                                                 <ul>
                                                     <li>
-                                                        <a href="{{ path('place_show', { 'id': place.id }) }}">show</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ path('place_edit', { 'id': place.id }) }}">edit</a>
+                                                        <a href="{{ path('place_edit', { 'id': place.id }) }}">Editar</a>
                                                     </li>
                                                 </ul>
                                             </td>

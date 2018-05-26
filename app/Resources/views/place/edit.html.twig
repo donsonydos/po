@@ -1,21 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Place edit</h1>
+<!-- Page Breadcrumb -->
+    <div class="page-breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="fa fa-building"></i>
+                <a href="{{ path('place_index') }}">{{ nameItem }}</a>
+            </li>
+            <li class="active">{{ editItem }}</li>
+        </ul>
+    </div>
+    {% include 'Default/editForm-start.html.twig' %}
+        {{ form_start(edit_form) }}
+        <div class="form-group col-xs-6 col-sm-6">
+            {{ form_row(edit_form.plceName) }}
+        </div>
+        <hr class="wide">
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('place_index') }}">Back to the list</a>
-        </li>
-        <li>
+        <div class="col-sm-12">
+            <button type="submit" class="btn btn-success">Editar</button>
+            <a href="{{ path('place_index') }}" class="btn btn-blue">Cancelar</a>
+            {{ form_end(edit_form) }}
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <input type="submit" class="btn btn-danger" value="Borrar">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        </div>
+    {% include 'Default/editForm-end.html.twig' %}
 {% endblock %}

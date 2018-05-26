@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tags_clouds list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Taclname</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tags_cloud in tags_clouds %}
+            <tr>
+                <td><a href="{{ path('tags_cloud_show', { 'id': tags_cloud.id }) }}">{{ tags_cloud.id }}</a></td>
+                <td>{{ tags_cloud.taclName }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tags_cloud_show', { 'id': tags_cloud.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tags_cloud_edit', { 'id': tags_cloud.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tags_cloud_new') }}">Create a new tags_cloud</a>
+        </li>
+    </ul>
+{% endblock %}
